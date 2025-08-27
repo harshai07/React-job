@@ -40,23 +40,23 @@ const AddJobPage = ({ addJobSubmit }) => {
   };
 
   return (
-    <section className='bg-indigo-50'>
-      <div className='container m-auto max-w-2xl py-24'>
-        <div className='bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0'>
+    <section className='add-job-section'>
+      <div className='add-job-container'>
+        <div className='add-job-form'>
           <form onSubmit={submitForm}>
-            <h2 className='text-3xl text-center font-semibold mb-6'>Add Job</h2>
+            <h2 className='add-job-title'>Add Job</h2>
 
-            <div className='mb-4'>
+            <div className='form-group'>
               <label
                 htmlFor='type'
-                className='block text-gray-700 font-bold mb-2'
+                className='form-label'
               >
                 Job Type
               </label>
               <select
                 id='type'
                 name='type'
-                className='border rounded w-full py-2 px-3'
+                className='form-select'
                 required
                 value={type}
                 onChange={(e) => setType(e.target.value)}
@@ -68,32 +68,32 @@ const AddJobPage = ({ addJobSubmit }) => {
               </select>
             </div>
 
-            <div className='mb-4'>
-              <label className='block text-gray-700 font-bold mb-2'>
+            <div className='form-group'>
+              <label className='form-label'>
                 Job Listing Name
               </label>
               <input
                 type='text'
                 id='title'
                 name='title'
-                className='border rounded w-full py-2 px-3 mb-2'
+                className='form-input'
                 placeholder='eg. Beautiful Apartment In Miami'
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
-            <div className='mb-4'>
+            <div className='form-group'>
               <label
                 htmlFor='description'
-                className='block text-gray-700 font-bold mb-2'
+                className='form-label'
               >
                 Description
               </label>
               <textarea
                 id='description'
                 name='description'
-                className='border rounded w-full py-2 px-3'
+                className='form-textarea'
                 rows='4'
                 placeholder='Add any job duties, expectations, requirements, etc'
                 value={description}
@@ -101,17 +101,17 @@ const AddJobPage = ({ addJobSubmit }) => {
               ></textarea>
             </div>
 
-            <div className='mb-4'>
+            <div className='form-group'>
               <label
                 htmlFor='type'
-                className='block text-gray-700 font-bold mb-2'
+                className='form-label'
               >
                 Salary
               </label>
               <select
                 id='salary'
                 name='salary'
-                className='border rounded w-full py-2 px-3'
+                className='form-select'
                 required
                 value={salary}
                 onChange={(e) => setSalary(e.target.value)}
@@ -130,15 +130,15 @@ const AddJobPage = ({ addJobSubmit }) => {
               </select>
             </div>
 
-            <div className='mb-4'>
-              <label className='block text-gray-700 font-bold mb-2'>
+            <div className='form-group'>
+              <label className='form-label'>
                 Location
               </label>
               <input
                 type='text'
                 id='location'
                 name='location'
-                className='border rounded w-full py-2 px-3 mb-2'
+                className='form-input'
                 placeholder='Company Location'
                 required
                 value={location}
@@ -146,12 +146,12 @@ const AddJobPage = ({ addJobSubmit }) => {
               />
             </div>
 
-            <h3 className='text-2xl mb-5'>Company Info</h3>
+            <h3 className='form-section-title'>Company Info</h3>
 
-            <div className='mb-4'>
+            <div className='form-group'>
               <label
                 htmlFor='company'
-                className='block text-gray-700 font-bold mb-2'
+                className='form-label'
               >
                 Company Name
               </label>
@@ -159,24 +159,24 @@ const AddJobPage = ({ addJobSubmit }) => {
                 type='text'
                 id='company'
                 name='company'
-                className='border rounded w-full py-2 px-3'
+                className='form-input'
                 placeholder='Company Name'
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
               />
             </div>
 
-            <div className='mb-4'>
+            <div className='form-group'>
               <label
                 htmlFor='company_description'
-                className='block text-gray-700 font-bold mb-2'
+                className='form-label'
               >
                 Company Description
               </label>
               <textarea
                 id='company_description'
                 name='company_description'
-                className='border rounded w-full py-2 px-3'
+                className='form-textarea'
                 rows='4'
                 placeholder='What does your company do?'
                 value={companyDescription}
@@ -184,10 +184,10 @@ const AddJobPage = ({ addJobSubmit }) => {
               ></textarea>
             </div>
 
-            <div className='mb-4'>
+            <div className='form-group'>
               <label
                 htmlFor='contact_email'
-                className='block text-gray-700 font-bold mb-2'
+                className='form-label'
               >
                 Contact Email
               </label>
@@ -195,17 +195,17 @@ const AddJobPage = ({ addJobSubmit }) => {
                 type='email'
                 id='contact_email'
                 name='contact_email'
-                className='border rounded w-full py-2 px-3'
+                className='form-input'
                 placeholder='Email address for applicants'
                 required
                 value={contactEmail}
                 onChange={(e) => setContactEmail(e.target.value)}
               />
             </div>
-            <div className='mb-4'>
+            <div className='form-group'>
               <label
                 htmlFor='contact_phone'
-                className='block text-gray-700 font-bold mb-2'
+                className='form-label'
               >
                 Contact Phone
               </label>
@@ -213,7 +213,7 @@ const AddJobPage = ({ addJobSubmit }) => {
                 type='tel'
                 id='contact_phone'
                 name='contact_phone'
-                className='border rounded w-full py-2 px-3'
+                className='form-input'
                 placeholder='Optional phone for applicants'
                 value={contactPhone}
                 onChange={(e) => setContactPhone(e.target.value)}
@@ -222,7 +222,7 @@ const AddJobPage = ({ addJobSubmit }) => {
 
             <div>
               <button
-                className='bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline'
+                className='submit-button'
                 type='submit'
               >
                 Add Job
